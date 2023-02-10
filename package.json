@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:seed": "npx prisma db seed",
+    "db:studio": "npx prisma studio",
+    "db:migrate": "npx prisma migrate dev"
   },
   "dependencies": {
     "@next/font": "13.1.6",
@@ -34,5 +37,8 @@
     "tailwindcss": "3.2.4",
     "ts-node": "10.9.1",
     "tsconfig-paths": "4.1.1"
+  },
+  "prisma": {
+    "seed": "ts-node -P tsconfig-seed.json -r tsconfig-paths/register --transpileOnly prisma/seed.ts"
   }
 }
