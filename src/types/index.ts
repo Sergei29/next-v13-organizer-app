@@ -3,3 +3,10 @@ export interface ISidebarLink {
   icon: string;
   link: string;
 }
+
+export interface IUser {
+  id: string;
+  email: string;
+  firstName?: string;
+  lastName?: string;
+}
