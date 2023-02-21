@@ -1,4 +1,4 @@
-import { IUser } from "@/types";
+import { IUser, IRegisterCredentials, ISignInCredentials } from "@/types";
 
 interface IFetchParams {
   url: string;
@@ -32,7 +32,7 @@ export const fetcher = async ({
   }
 };
 
-export const register = async (user: IUser) => {
+export const register = async (user: IRegisterCredentials) => {
   return fetcher({
     url: "/api/register",
     method: "POST",
@@ -41,7 +41,7 @@ export const register = async (user: IUser) => {
   });
 };
 
-export const signin = async (user: IUser) => {
+export const signin = async (user: ISignInCredentials) => {
   return fetcher({
     url: "/api/signin",
     method: "POST",

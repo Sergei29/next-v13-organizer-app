@@ -10,3 +10,15 @@ export interface IUser {
   firstName?: string;
   lastName?: string;
 }
+
+export interface IRegisterCredentials {
+  email: string;
+  password: string;
+  firstName?: string;
+  lastName?: string;
+}
+
+export type ISignInCredentials = Pick<
+  IRegisterCredentials,
+  "email" | "password"
+>;
