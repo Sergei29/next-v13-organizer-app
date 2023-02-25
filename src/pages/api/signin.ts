@@ -3,7 +3,7 @@ import { db } from "@/lib/db";
 import { comparePasswords, createJWT } from "@/lib/auth";
 import { serialize } from "cookie";
 
-import { WEEK_IN_SECONDS } from "@/constants";
+import { COOKIE_OPTIONS } from "@/constants";
 
 type ReturnType = {};
 
@@ -32,11 +32,7 @@ const handleSignin: NextApiHandler<ReturnType> = async (req, res) => {
     const jwt = await createJWT(user);
     res.setHeader(
       "Set-Cookie",
-      serialize(process.env.COOKIE_NAME || "", jwt, {
-        httpOnly: true,
-        path: "/",
-        maxAge: WEEK_IN_SECONDS,
-      })
+      serialize(process.env.COOKIE_NAME || "", jwt, COOKIE_OPTIONS)
     );
     res.status(201);
     res.end();

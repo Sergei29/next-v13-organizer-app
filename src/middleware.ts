@@ -23,6 +23,7 @@ export async function middleware(req: NextRequest) {
     pathname.startsWith("/api") ||
     pathname.startsWith("/static") ||
     pathname.startsWith("/signin") ||
+    pathname.startsWith("/signout") ||
     pathname.startsWith("/register") ||
     PUBLIC_FILE_REGEX.test(pathname)
   ) {

@@ -49,3 +49,12 @@ export const signin = async (user: ISignInCredentials) => {
     json: false,
   });
 };
+
+export const signout = async () => {
+  return fetcher({
+    url: "/api/signout",
+    method: "GET",
+    body: undefined,
+    json: false,
+  });
+};
