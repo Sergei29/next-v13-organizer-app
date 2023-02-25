@@ -4,6 +4,12 @@ import { SignJWT, jwtVerify } from "jose";
 import { WEEK_IN_SECONDS } from "@/constants";
 import { db } from "./db";
 
+/**
+ *  IMPORTANT! do not export this file all contents from the index.ts
+ *  because it will cause error `module not found` client side due to `bcrypt`
+ *  library
+ */
+
 export const hashPassword = (password: string) => bcrypt.hash(password, 10);
 
 export const comparePasswords = (

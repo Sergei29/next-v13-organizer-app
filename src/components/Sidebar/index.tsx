@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 
 import logo from "@/assets/images/logo.png";
-import SignOutButton from "@/components/SignOutButton";
 import Card from "@/components/Card";
 import SidebarLink from "./SidebarLink";
 
@@ -31,7 +30,6 @@ const Sidebar = ({}: IProps): JSX.Element => (
     {links.map((link) => (
       <SidebarLink key={link.link} link={link} />
     ))}
-    <SignOutButton />
   </Card>
 );
 

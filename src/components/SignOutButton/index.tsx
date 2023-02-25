@@ -15,7 +15,7 @@ const SignOutButton = (): JSX.Element => {
   };
 
   return (
-    <Button size="small" onClick={handleClick}>
+    <Button size="small" className="ml-auto" onClick={handleClick}>
       sign out
     </Button>
   );
