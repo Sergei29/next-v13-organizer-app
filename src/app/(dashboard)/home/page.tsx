@@ -6,6 +6,7 @@ import { delay, db } from "@/lib";
 import { getUserFromCookie } from "@/lib/auth";
 import Greetings, { GreetingsSkeleton } from "@/components/Greetings";
 import ProjectCard from "@/components/ProjectCard";
+import TaskCard from "@/components/TaskCard";
 
 const getData = async () => {
   await delay(2000);
@@ -36,19 +37,20 @@ const DashboardHomePage = async () => {
         </div>
         <div className="flex flex-2 grow items-center flex-wrap mt-3 -m-3 ">
           {projects.map((project) => (
-            <Link
-              href={`/project/${project.id}`}
-              className="w-1/3 p-3"
-              key={project.id}
-            >
-              <ProjectCard project={project} />
-            </Link>
+            <div className="w-1/3 p-3" key={project.id}>
+              <Link href={`/project/${project.id}`}>
+                <ProjectCard project={project} />
+              </Link>
+            </div>
           ))}
 
           <div className="w-1/3 p-3">{/* new project here */}</div>
         </div>
         <div className="mt-6 flex-2 grow w-full flex">
-          <div className="w-full">{/* tasks here */}</div>
+          <div className="w-full">
+            {/* @ts-ignore Server Component */}
+            <TaskCard />
+          </div>
         </div>
       </div>
     </div>

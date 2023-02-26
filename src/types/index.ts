@@ -1,3 +1,4 @@
+import { Prisma } from "@prisma/client";
 export interface ISidebarLink {
   label: string;
   icon: string;
@@ -22,3 +23,5 @@ export type ISignInCredentials = Pick<
   IRegisterCredentials,
   "email" | "password"
 >;
+
+export type Task = Prisma.TaskGetPayload<Prisma.TaskArgs>;
