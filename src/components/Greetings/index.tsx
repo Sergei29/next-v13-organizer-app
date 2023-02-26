@@ -7,6 +7,8 @@ import Card from "@/components/Card";
 import SignOutButton from "@/components/SignOutButton";
 import { delay } from "@/lib/async";
 
+export * from "./GreetingsSkeleton";
+
 const getData = async () => {
   await delay(5000);
   const user = await getUserFromCookie(cookies());
