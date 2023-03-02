@@ -6,6 +6,7 @@ import { delay, db } from "@/lib";
 import { getUserFromCookie } from "@/lib/auth";
 import Greetings, { GreetingsSkeleton } from "@/components/Greetings";
 import ProjectCard from "@/components/ProjectCard";
+import NewProject from "@/components/NewProject";
 import TaskCard from "@/components/TaskCard";
 
 const getData = async () => {
@@ -43,8 +44,9 @@ const DashboardHomePage = async () => {
               </Link>
             </div>
           ))}
-
-          <div className="w-1/3 p-3">{/* new project here */}</div>
+          <div className="w-1/3 p-3">
+            <NewProject />
+          </div>
         </div>
         <div className="mt-6 flex-2 grow w-full flex">
           <div className="w-full">
